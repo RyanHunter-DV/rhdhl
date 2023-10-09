@@ -1,0 +1,9 @@
+{
+	"nodes":[
+		{"id":"ba1e640daaa3bd71","x":-1200,"y":-460,"width":490,"height":180,"type":"text","text":"user plugin configs and setup:\n```lua\nrequire('rhdhl').setup({xxxx})\n```"},
+		{"id":"2115023fbe84d135","x":-560,"y":-460,"width":460,"height":180,"type":"text","text":"rhdhl/init.lua\n`setup(configs)`\nsetup the whole plugin,\n- add autocmds\n- override default configs if user specified.\n"}
+	],
+	"edges":[
+		{"id":"8087dbde37cc2439","fromNode":"ba1e640daaa3bd71","fromSide":"right","toNode":"2115023fbe84d135","toSide":"left","label":"setup"}
+	]
+}
