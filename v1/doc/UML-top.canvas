@@ -1,9 +1,15 @@
 {
 	"nodes":[
-		{"id":"ba1e640daaa3bd71","x":-1200,"y":-460,"width":490,"height":180,"type":"text","text":"user plugin configs and setup:\n```lua\nrequire('rhdhl').setup({xxxx})\n```"},
-		{"id":"2115023fbe84d135","x":-560,"y":-460,"width":460,"height":180,"type":"text","text":"rhdhl/init.lua\n`setup(configs)`\nsetup the whole plugin,\n- add autocmds\n- override default configs if user specified.\n"}
+		{"id":"ba1e640daaa3bd71","type":"text","text":"user plugin configs and setup:\n```lua\nrequire('rhdhl').setup({xxxx})\n```\n# Feature supports\n#TBD","x":-1200,"y":-460,"width":490,"height":180,"color":"2"},
+		{"id":"2115023fbe84d135","type":"text","text":"rhdhl/init.lua\n`setup(configs)`\nsetup the whole plugin,\n- override default configs if user specified.\n- build the highlight group and namespace.(highlighter)\n- add autocmds\n\n`actionsWhenCursorMoved`\n- available only in normal CursorMoved event, not available in insert mode.\n- clear previous highlighter\n- get current word, and match it in whole buf\n- set current highlighter\n","x":-560,"y":-460,"width":460,"height":180},
+		{"id":"a294d032ba48be84","x":-455,"y":-700,"width":250,"height":60,"type":"text","text":"common.autocmd"},
+		{"id":"da3c884029675208","x":100,"y":-460,"width":480,"height":180,"type":"text","text":"# rhdhl.highlighter\nThe highlighter setting, supports:\n- create highlight group, and namespace\n- api to set highlight extmarks, one match of context will need to set one extmark, with the same highlight group and namespace.\n- api to clear highlight extmarks."},
+		{"id":"ae6e535952205fd9","x":100,"y":-100,"width":480,"height":200,"type":"text","text":"# rhdhl.context\ncontext object to support:\n- filter the pattern word current cursor locates.\n- find out all words in current buf, with matched locations."}
 	],
 	"edges":[
-		{"id":"8087dbde37cc2439","fromNode":"ba1e640daaa3bd71","fromSide":"right","toNode":"2115023fbe84d135","toSide":"left","label":"setup"}
+		{"id":"8087dbde37cc2439","fromNode":"ba1e640daaa3bd71","fromSide":"right","toNode":"2115023fbe84d135","toSide":"left","label":"setup"},
+		{"id":"3276343bd85d1e71","fromNode":"2115023fbe84d135","fromSide":"top","toNode":"a294d032ba48be84","toSide":"bottom","label":"common lib"},
+		{"id":"7e453eac80ab7a03","fromNode":"2115023fbe84d135","fromSide":"right","toNode":"da3c884029675208","toSide":"left"},
+		{"id":"326c9306e899f4ac","fromNode":"2115023fbe84d135","fromSide":"right","toNode":"ae6e535952205fd9","toSide":"left"}
 	]
 }
